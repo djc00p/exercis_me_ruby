@@ -15,17 +15,21 @@ class Matrix
   end
 
   def columns
-    col = []
-    rows.each do |row|
-      row.each do |i|
-        if col[row.index(i)].nil?
-          col.push(Array.new())
-          col[row.index(i)].push(i)
-        else
-          col[row.index(i)].push(i)
-        end
-      end
-    end
-    return col
+    # Hard way of doing it
+    # col = []
+    # rows.each do |row|
+    #   row.each do |i|
+    #     if col[row.index(i)].nil?
+    #       col.push(Array.new())
+    #       col[row.index(i)].push(i)
+    #     else
+    #       col[row.index(i)].push(i)
+    #     end
+    #   end
+    # end
+    # return col
+
+    # Easy way
+    rows.transpose
   end
 end
