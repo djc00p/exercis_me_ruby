@@ -1,5 +1,3 @@
-require 'pry'
-
 class Matrix
 
   def initialize(matrix_s)
@@ -14,5 +12,20 @@ class Matrix
       end
     end
     return s
+  end
+
+  def columns
+    col = []
+    rows.each do |row|
+      row.each do |i|
+        if col[row.index(i)].nil?
+          col.push(Array.new())
+          col[row.index(i)].push(i)
+        else
+          col[row.index(i)].push(i)
+        end
+      end
+    end
+    return col
   end
 end
