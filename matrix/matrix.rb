@@ -1,8 +1,18 @@
-=begin
-Write your code for the 'Matrix' exercise in this file. Make the tests in
-`matrix_test.rb` pass.
+require 'pry'
 
-To get started with TDD, see the `README.md` file in your
-`ruby/matrix` directory.
-=end
+class Matrix
 
+  def initialize(matrix_s)
+    @matrix_s = matrix_s
+  end
+
+  def rows
+    s = @matrix_s.split("\n")
+    s.map! do |s_num|
+      s_num.split(" ").map! do |num|
+        num.to_i
+      end
+    end
+    return s
+  end
+end
